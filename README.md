@@ -1,7 +1,7 @@
 # quoraDupli
 identifying duplicate questions on Quora
 
-- 'LabGuide_2017S.pdf'课程任务要求
+- [LabGuide_2017S.pdf](LabGuide_2017S.pdf)课程任务要求
 - [Quora上任务详情](https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs)
 - [参考博客1](http://www.erogol.com/duplicate-question-detection-deep-learning/?utm_source=tuicool&utm_medium=referral)
 - [参考博客2](https://explosion.ai/blog/quora-deep-text-pair-classification#dataset)
