@@ -13,6 +13,12 @@ def dataLoad(path='data\quora_duplicate_questions.tsv'):
     df['question1'] = df['question1'].apply(lambda x: unicode(str(x), 'utf-8'))
     df['question2'] = df['question2'].apply(lambda x: unicode(str(x), 'utf-8'))
 
+    stats(df)
+
+    return df
+
+# 统计数据信息
+def stats(df):
     print '数据量: %d行' % (df.shape[0])
     rowNum0 = df['is_duplicate'].value_counts()[0]
     rowNum1 = df['is_duplicate'].value_counts()[1]
@@ -20,7 +26,6 @@ def dataLoad(path='data\quora_duplicate_questions.tsv'):
           % (rowNum1, rowNum0, (rowNum0 * 1.0 / rowNum1))
     uniqueId = set(list(df['qid2'].unique()) + list(df['qid1'].unique()))
     print '问题总数: %d' % (len(uniqueId))
-    return df
 
 # 绘图
 def drawing(df):

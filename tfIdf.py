@@ -15,7 +15,7 @@ else:
     tfIdfScore = getTfIdfScore(df)
 
 nlp = md.load()
-questionList = [list(df['question1']), list(df['question1'])]
+questionList = [list(df['question1']), list(df['question2'])]
 finalVec = []
 for i, questions in enumerate(questionList):
     print '正在处理question%i......' % (i+1)
