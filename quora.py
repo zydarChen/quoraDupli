@@ -4,9 +4,10 @@ from preprocess import *
 import numpy as np
 from tqdm import tqdm
 from sklearn import svm
+from sklearn import linear_model
 
 # df = pd.read_pickle('data\questionVector.pickle')  # 全数据集
-df = pd.read_pickle('data\questionVector2k.pickle')  # head(2000)
+df = pd.read_pickle('data\questionVector.pickle')  # head(2000)
 # 统计信息
 # stats(df)
 
@@ -43,6 +44,9 @@ def featureAndLabel(df):
 train, test = createTrain(df)
 trainX, trainY = featureAndLabel(train)
 testX, testY = featureAndLabel(test)
-clf = svm.SVC()
+
+clf = linear_model.SGDClassifier()
 clf.fit(trainX, trainY)
-print list(clf.predict(trainX)) == trainY
+# print [x for x in list(clf.predict(testX)) if x == 1]
+print clf.score(testX, testY)
+
